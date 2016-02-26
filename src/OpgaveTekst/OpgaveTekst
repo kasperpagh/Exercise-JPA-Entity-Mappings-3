@@ -1,0 +1,15 @@
+Opgave 4)
+
+Når jeg kører programmet uden en inheritance strategy, får jeg tabellerne: customer og discounttype.
+(Hvis jeg bruger auto til at lave IDs, så får man også en sequence table). 
+
+Min customer tabel har selvfølgelig kun en kolonne (ID). Discounttype indeholder derimod tabellerne
+ID, DTYPE, DISCOUNT og QUANTITYFORDISCOUNT. DTYPE er det field der indeholder data om hvilket type POJO der er repræsenteret i databasen. 
+Det vil sige at alle quantityfordiscount objekter man har persisteret er mærket med DTYPE som er ”DiscountQuantity” og ligeså med discountFixed objekter.
+Mit gæt er at vores ORM-framework bruger denne kolonne til at se hvorledes den skal mappe tilbage til POJO.    
+
+
+Opgave 5) 
+
+Med .JOINED får en tabel for hver klasse. Hvor discounttype blot indeholder et id og en
+DTYPE og de to andre tabeller indeholder deres respektive fields, samt et id der referere tilbage til discounttypetabellen. 
